@@ -114,6 +114,12 @@ public class RollerBallAgent : Agent
             mFloorTouched = true;
             PlayHitSound(coll);
         }
+        else if (coll.gameObject.CompareTag("Wall"))
+        {
+            // Duvara çarptığında ceza ver
+            AddReward(-0.5f);
+            PlayHitSound(coll);
+        }
         else
         {
             PlayHitSound(coll);
